@@ -4,13 +4,17 @@
   /* ---------- Mobile nav ---------- */
   var toggle = document.querySelector('.nav-toggle');
   var links = document.getElementById('nav-links');
-  function setMenu(open) {
-    links.classList.toggle('open', open);
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
-    toggle.textContent = open ? 'Close' : 'Menu';
-  }
-  toggle.addEventListener('click', function () { setMenu(!links.classList.contains('open')); });
-  links.addEventListener('click', function (e) { if (e.target.tagName === 'A') setMenu(false); });
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   /* ---------- Active nav link while scrolling ---------- */
   var navMap = {};
@@ -18,7 +22,8 @@
   var spy = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (!en.isIntersecting) return;
-      Object.keys(navMap).forEach(function (k) { navMap[k].classList.toggle('active', k === en.target.id); });
+      var id = en.target.id === 'about' ? 'home' : en.target.id;
+      Object.keys(navMap).forEach(function (k) { navMap[k].classList.toggle('active', k === id); });
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
   ['home', 'about', 'unity', 'roblox', 'phaser', 'personal', 'contact'].forEach(function (id) {
@@ -34,7 +39,6 @@
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.setAttribute('aria-label', 'Play ' + title + ' video');
-    btn.innerHTML = '<span>&#9654;&nbsp; Watch video</span>';
     btn.addEventListener('click', function () {
       var f = document.createElement('iframe');
       f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
@@ -62,12 +66,10 @@
     var imgs = Array.prototype.slice.call(track.querySelectorAll('img'));
     if (imgs.length < 2) return;
 
-    var bar = document.createElement('div');
-    bar.className = 'gallery-bar';
     var prev = document.createElement('button');
     var next = document.createElement('button');
-    prev.className = 'gallery-btn'; prev.innerHTML = '&larr;'; prev.setAttribute('aria-label', 'Previous image');
-    next.className = 'gallery-btn'; next.innerHTML = '&rarr;'; next.setAttribute('aria-label', 'Next image');
+    prev.className = 'gallery-btn prev'; prev.innerHTML = '&#8249;'; prev.setAttribute('aria-label', 'Previous image');
+    next.className = 'gallery-btn next'; next.innerHTML = '&#8250;'; next.setAttribute('aria-label', 'Next image');
     var count = document.createElement('span');
     count.className = 'gallery-count';
     var thumbs = document.createElement('div');
@@ -90,8 +92,8 @@
       });
     });
 
-    bar.append(prev, count, next, thumbs);
-    gallery.after(bar);
+    gallery.append(prev, next, count);
+    gallery.after(thumbs);
 
     function current() { return Math.round(track.scrollLeft / track.clientWidth); }
     function go(i) {
@@ -122,6 +124,19 @@
     if (e.key === 'ArrowLeft') showLightbox(lbIndex - 1);
     if (e.key === 'ArrowRight') showLightbox(lbIndex + 1);
   });
+
+  /* ---------- Reveal cards on scroll ---------- */
+  if ('IntersectionObserver' in window) {
+    var reveal = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); reveal.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.project, .about-card, .contact-card').forEach(function (el) {
+      el.classList.add('reveal');
+      reveal.observe(el);
+    });
+  }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

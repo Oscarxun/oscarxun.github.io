@@ -8,20 +8,20 @@
   <meta property="og:title" content="Yi Xun — Game Developer">
   <meta property="og:description" content="Unity, Roblox and Phaser projects by Yi Xun.">
   <meta property="og:image" content="assets/backgrounds/about.jpg">
-  <meta name="theme-color" content="#141414">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffc93c'/%3E%3Ctext x='32' y='45' font-family='Arial' font-weight='900' font-size='34' text-anchor='middle' fill='%23141414'%3EYX%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
+  <meta name="theme-color" content="#0b0d12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='32' y='43' font-family='Segoe UI,Arial' font-weight='800' font-size='30' text-anchor='middle' fill='%233dd9ff'%3EYX%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
-  <nav class="nav wrap" aria-label="Main">
-    <a class="brand" href="#home">Yi Xun <span>/ Game Developer</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#home"><span class="brand-mark">YX</span> Yi Xun</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
       <li><a href="#unity">Unity</a></li>
       <li><a href="#roblox">Roblox</a></li>
       <li><a href="#phaser">Phaser</a></li>
@@ -34,40 +34,42 @@
 <main>
 
   <!-- ============ HOME ============ -->
-  <section id="home" class="intro">
-    <div class="wrap">
-      <h1>Hi, I'm <em>Yi Xun</em> — a Game Developer specializing in Unity and Roblox</h1>
-      <div class="intro-actions">
-        <a class="btn btn-primary" href="#unity">See my work</a>
+  <section id="home" class="hero" style="--img: url('assets/backgrounds/hero.jpg')">
+    <div class="hero-inner">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Hi, I'm <span class="accent">Yi Xun</span> — a Game Developer specializing in Unity and Roblox</h1>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#unity">View Projects</a>
         <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
       </div>
     </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to About Me"></a>
   </section>
 
-  <div class="collage" role="img" aria-label="Collage of games" style="background-image: url('assets/backgrounds/about.jpg')"></div>
-
-  <section id="about" class="about">
-    <div class="wrap split">
-      <h2 class="label">About Me</h2>
+  <section id="about" class="about" style="--img: url('assets/backgrounds/about.jpg')">
+    <div class="about-card">
+      <h2 class="kicker">About Me</h2>
       <p>I am a game developer specializing in Unity and Roblox Studio, with experience in gameplay systems, UI implementation, 3D character animation, 2D Spine animation, and API integration. I also have experience with Phaser 3 for web-based game development. I am passionate about turning creative ideas into polished, interactive player experiences.</p>
+      <ul class="tags">
+        <li>Unity</li><li>Roblox Studio</li><li>Phaser 3</li><li>Gameplay Systems</li><li>UI</li><li>3D Animation</li><li>2D Spine</li><li>API Integration</li>
+      </ul>
     </div>
   </section>
 
   <!-- ============ UNITY ============ -->
-  <section id="unity">
-    <header class="section-head" style="background-image: url('assets/backgrounds/unity.jpg')">
-      <div class="wrap"><h2 class="section-title">Unity Projects<small>04</small></h2></div>
+  <section id="unity" class="projects">
+    <header class="section-banner" style="--img: url('assets/backgrounds/unity.jpg')">
+      <h2>Unity Projects</h2>
     </header>
-    <div class="wrap">
+    <div class="container">
 
       <article class="project" id="ejen-ali-emergency">
         <div class="media">
           <div class="yt" data-id="O8uHoyTXG9g" data-title="Ejen Ali: Emergency"></div>
         </div>
         <div class="body">
-          <span class="num">01</span>
           <h3>Ejen Ali: Emergency</h3>
-          <p class="meta">Engine <b>Unity</b> &nbsp;·&nbsp; Platform <b>Android, iOS</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Platform</dt><dd>Android, iOS</dd></div></dl>
           <p>In Ejen Ali: Emergency, players take on the role of Ejen Ali in an award-winning isometric action-puzzle mobile game, infiltrating the MATA facility using gadgets like Iris and Yoyo, and collaborating with allies like Ejen Comot and Ejen Bakar to overcome obstacles.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
@@ -77,8 +79,8 @@
             <li>Collaborated with the development team to integrate mission design seamlessly into the game's mechanics.</li>
           </ul>
           <div class="links">
-            <a href="https://play.google.com/store/apps/details?id=com.commonextract.ejenaliemergency&amp;hl=en" target="_blank" rel="noopener">Google Play</a>
-            <a href="https://apps.apple.com/my/app/ejen-ali-emergency/id1147029036" target="_blank" rel="noopener">App Store</a>
+            <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.commonextract.ejenaliemergency&amp;hl=en" target="_blank" rel="noopener">Google Play</a>
+            <a class="btn btn-sm" href="https://apps.apple.com/my/app/ejen-ali-emergency/id1147029036" target="_blank" rel="noopener">App Store</a>
           </div>
         </div>
       </article>
@@ -96,9 +98,8 @@
           </div>
         </div>
         <div class="body">
-          <span class="num">02</span>
           <h3>Royal Mania</h3>
-          <p class="meta">Engine <b>Unity</b> &nbsp;·&nbsp; Platform <b>Android, iOS</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Platform</dt><dd>Android, iOS</dd></div></dl>
           <p>Royal Mania is a free-to-play mobile game that gives players the chance to win real prizes while enjoying engaging gameplay.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
@@ -121,17 +122,16 @@
           </div>
         </div>
         <div class="body">
-          <span class="num">03</span>
           <h3>Komuniti Kita</h3>
-          <p class="meta">Engine <b>Unity</b> &nbsp;·&nbsp; Platform <b>Android, iOS</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Platform</dt><dd>Android, iOS</dd></div></dl>
           <p>Komuniti Kita is a game that highlights community care and the spirit of takaful in 21st century Malaysia. Players follow the stories of Ali, Aisyah, Mary, and Chen as they pursue their financial goals with the help of F8, a versatile robot.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
             <li>Created comic-style cutscenes to tell the characters' stories and guide players through the game's narrative.</li>
           </ul>
           <div class="links">
-            <a href="https://play.google.com/store/apps/details?id=com.commonextract.komunitikita&amp;hl=ms" target="_blank" rel="noopener">Google Play</a>
-            <a href="https://apps.apple.com/my/app/komuniti-kita/id1585603952" target="_blank" rel="noopener">App Store</a>
+            <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.commonextract.komunitikita&amp;hl=ms" target="_blank" rel="noopener">Google Play</a>
+            <a class="btn btn-sm" href="https://apps.apple.com/my/app/komuniti-kita/id1585603952" target="_blank" rel="noopener">App Store</a>
           </div>
         </div>
       </article>
@@ -141,9 +141,8 @@
           <div class="yt" data-id="uc_c6dwvKr4" data-title="Defiantz Military"></div>
         </div>
         <div class="body">
-          <span class="num">04</span>
           <h3>Defiantz Military</h3>
-          <p class="meta">Engine <b>Unity</b> &nbsp;·&nbsp; Platform <b>Browser</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Platform</dt><dd>Browser</dd></div></dl>
           <p>Defianz NFT is a Web3-based top-down game where players can use their purchased Defianz NFTs as playable characters. The game combines blockchain technology with engaging gameplay, allowing players to battle, explore, and interact using their unique NFT-based assets.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
@@ -159,27 +158,26 @@
   </section>
 
   <!-- ============ ROBLOX ============ -->
-  <section id="roblox">
-    <header class="section-head" style="background-image: url('assets/backgrounds/roblox.jpg')">
-      <div class="wrap"><h2 class="section-title">Roblox Projects<small>03</small></h2></div>
+  <section id="roblox" class="projects">
+    <header class="section-banner" style="--img: url('assets/backgrounds/roblox.jpg')">
+      <h2>Roblox Projects</h2>
     </header>
-    <div class="wrap">
+    <div class="container">
 
       <article class="project" id="titan-heroes">
         <div class="media">
           <div class="yt" data-id="EoW9c8ZST0c" data-title="Titan Heroes"></div>
         </div>
         <div class="body">
-          <span class="num">05</span>
           <h3>Titan Heroes</h3>
-          <p class="meta">Engine <b>Roblox Studio</b> &nbsp;·&nbsp; Platform <b>Roblox</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Roblox Studio</dd></div><div><dt>Platform</dt><dd>Roblox</dd></div></dl>
           <p>Titan Heroes is a multiplayer action game where players team up to defeat powerful Titans and upgrade weapons and abilities.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
             <li>Implemented enemies and enemy boss behaviours</li>
           </ul>
           <div class="links">
-            <a href="https://www.roblox.com/games/112674543341852/Titan-Heroes" target="_blank" rel="noopener">Play on Roblox</a>
+            <a class="btn btn-sm" href="https://www.roblox.com/games/112674543341852/Titan-Heroes" target="_blank" rel="noopener">Play on Roblox</a>
           </div>
         </div>
       </article>
@@ -196,9 +194,8 @@
           </div>
         </div>
         <div class="body">
-          <span class="num">06</span>
           <h3>6 GUNS</h3>
-          <p class="meta">Engine <b>Roblox Studio</b> &nbsp;·&nbsp; Platform <b>Roblox</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Roblox Studio</dd></div><div><dt>Platform</dt><dd>Roblox</dd></div></dl>
           <p>6 GUNS is a fast-paced multiplayer roguelike FPS where players equip up to six different guns, survive escalating enemy waves, and grow stronger by earning new weapons or powerful buffs after each clear.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
@@ -206,7 +203,7 @@
             <li>Developed core gameplay systems, including enemy wave spawning, chest-based reward mechanics, and the buff system that drives roguelike progression.</li>
           </ul>
           <div class="links">
-            <a href="https://www.roblox.com/games/91920408022274/6-GUNS" target="_blank" rel="noopener">Play on Roblox</a>
+            <a class="btn btn-sm" href="https://www.roblox.com/games/91920408022274/6-GUNS" target="_blank" rel="noopener">Play on Roblox</a>
           </div>
         </div>
       </article>
@@ -224,9 +221,8 @@
           </div>
         </div>
         <div class="body">
-          <span class="num">07</span>
           <h3>Gummy Bear Simulator</h3>
-          <p class="meta">Engine <b>Roblox Studio</b> &nbsp;·&nbsp; Platform <b>Roblox</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Roblox Studio</dd></div><div><dt>Platform</dt><dd>Roblox</dd></div></dl>
           <p>Gummy Bear Simulator is a casual Roblox game where players collect candies, transform them into gummy bears, feed the Bee King for coins, buy ovens, and collect pets.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
@@ -234,7 +230,7 @@
             <li>Implemented several update events to keep the game engaging and fresh.</li>
           </ul>
           <div class="links">
-            <a href="https://www.roblox.com/games/108833557791562/Fish-Gummy-Bear-Simulator" target="_blank" rel="noopener">Play on Roblox</a>
+            <a class="btn btn-sm" href="https://www.roblox.com/games/108833557791562/Fish-Gummy-Bear-Simulator" target="_blank" rel="noopener">Play on Roblox</a>
           </div>
         </div>
       </article>
@@ -243,20 +239,19 @@
   </section>
 
   <!-- ============ PHASER ============ -->
-  <section id="phaser">
-    <header class="section-head" style="background-image: url('assets/backgrounds/phaser.jpg')">
-      <div class="wrap"><h2 class="section-title">Phaser Projects<small>01</small></h2></div>
+  <section id="phaser" class="projects">
+    <header class="section-banner" style="--img: url('assets/backgrounds/phaser.jpg')">
+      <h2>Phaser Projects</h2>
     </header>
-    <div class="wrap">
+    <div class="container">
 
       <article class="project" id="allianz-virtual-adventure">
         <div class="media">
           <div class="yt" data-id="YmoiVs6Okbk" data-title="Allianz Virtual Adventure"></div>
         </div>
         <div class="body">
-          <span class="num">08</span>
           <h3>Allianz Virtual Adventure</h3>
-          <p class="meta">Engine <b>Phaser 3</b> &nbsp;·&nbsp; Platform <b>Browser</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Phaser 3</dd></div><div><dt>Platform</dt><dd>Browser</dd></div></dl>
           <p>Allianz Virtual Adventure is a limited-time online event where players can explore Malaysia virtually and win prizes worth RM200,000.</p>
           <h4>My Contribution</h4>
           <ul class="bullets">
@@ -270,11 +265,11 @@
   </section>
 
   <!-- ============ PERSONAL ============ -->
-  <section id="personal">
-    <header class="section-head section-head--plain">
-      <div class="wrap"><h2 class="section-title">Personal Projects<small>02</small></h2></div>
+  <section id="personal" class="projects">
+    <header class="section-banner section-banner--plain">
+      <h2>Personal Projects</h2>
     </header>
-    <div class="wrap">
+    <div class="container">
 
       <article class="project" id="rock-paper-scissors">
         <div class="media">
@@ -289,12 +284,11 @@
           </div>
         </div>
         <div class="body">
-          <span class="num">09</span>
           <h3>Rock Paper Scissors!</h3>
-          <p class="meta">Engine <b>Unity</b> &nbsp;·&nbsp; Platform <b>Windows, Browser</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Platform</dt><dd>Windows, Browser</dd></div></dl>
           <p>A fast-paced 1v1 card battle game inspired by rock-paper-scissors, developed in Unity using Photon Fusion for multiplayer. Players start with identical hands and use special cards to outsmart their opponents in quick, strategic matches — playable solo locally or in multiplayer online.</p>
           <div class="links">
-            <a href="https://xun97.itch.io/rock" target="_blank" rel="noopener">Play on itch.io</a>
+            <a class="btn btn-sm" href="https://xun97.itch.io/rock" target="_blank" rel="noopener">Play on itch.io</a>
           </div>
         </div>
       </article>
@@ -304,9 +298,8 @@
           <div class="yt" data-id="iGI1mOrUzd8" data-title="Arknights Gacha Simulator"></div>
         </div>
         <div class="body">
-          <span class="num">10</span>
           <h3>Arknights Gacha Simulator</h3>
-          <p class="meta">Engine <b>Unity</b> &nbsp;·&nbsp; Platform <b>Android</b></p>
+          <dl class="meta"><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Platform</dt><dd>Android</dd></div></dl>
           <p>A fan-made gacha simulator project developed for learning purposes, inspired by Arknights. The simulator replicates the game's summoning experience and interface to study UI flow and randomization systems.</p>
           <h4>Features</h4>
           <ul class="bullets">
@@ -319,7 +312,7 @@
           </ul>
           <p class="note">All images and music assets are the property of Hypergryph / Yostar, used solely for educational and non-commercial purposes, without modification.</p>
           <div class="links">
-            <a href="https://drive.google.com/file/d/1Cv2JuI5tO-WVeJO2_bEwj5EZUoMC-GZA/view?usp=sharing" target="_blank" rel="noopener">Download APK</a>
+            <a class="btn btn-sm" href="https://drive.google.com/file/d/1Cv2JuI5tO-WVeJO2_bEwj5EZUoMC-GZA/view?usp=sharing" target="_blank" rel="noopener">Download APK</a>
           </div>
         </div>
       </article>
@@ -328,24 +321,22 @@
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="contact">
-    <div class="wrap split">
-      <h2 class="label">Contact</h2>
-      <div>
-        <a class="contact-email" href="mailto:tomkhoo97@gmail.com">tomkhoo97@gmail.com</a>
-        <ul class="contact-list">
-          <li><span>Phone</span><a href="tel:+60108863468">+60108863468</a></li>
-          <li><span>itch.io</span><a href="https://xun97.itch.io/" target="_blank" rel="noopener">xun97.itch.io</a></li>
-        </ul>
-        <a class="btn btn-primary" href="assets/resume.pdf" download>Download Resume</a>
-      </div>
+  <section id="contact" class="contact" style="--img: url('assets/backgrounds/contact.jpg')">
+    <div class="contact-card">
+      <h2 class="kicker">Contact</h2>
+      <ul class="contact-list">
+        <li><span class="label">Email</span><a href="mailto:tomkhoo97@gmail.com">tomkhoo97@gmail.com</a></li>
+        <li><span class="label">Phone</span><a href="tel:+60108863468">+60108863468</a></li>
+        <li><span class="label">itch.io</span><a href="https://xun97.itch.io/" target="_blank" rel="noopener">xun97.itch.io</a></li>
+      </ul>
+      <a class="btn btn-primary btn-lg" href="assets/resume.pdf" download>Download Resume</a>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="wrap"><p>© <span id="year">2026</span> Yi Xun</p></div>
+  <p>© <span id="year">2026</span> Yi Xun</p>
 </footer>
 
 <dialog class="lightbox" aria-label="Image viewer">
